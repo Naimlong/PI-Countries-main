@@ -1,16 +1,18 @@
 import "./Card.css";
+import { Link } from "react-router-dom";
 
 
-const Card = (props) =>{
+
+const Card = ({ name, flags, continents, id }) =>{
     return(
         <div className="Card">
-            {/*<p>Name:{props.name}</p>
-            <p>Id:{props.id}</p>
-            <p>Continents:{props.continents}</p>*/}
             
-            <img src={props.flags} alt="imagen no disponible" width="275px" height="175px" />
-            <h3 className="nameCountry">{props.name}</h3>
-            <h5>{props.continents}</h5> 
+            <img src={flags} alt="img not found" width="275px" height="175px" />
+            <h3 className="nameCountry">{name}</h3>
+            <h5>{continents}</h5> 
+            <Link to={`/details/${id}`}>
+                <button className="buttonCard" >Details</button>
+            </Link>
         </div>
     )
 }

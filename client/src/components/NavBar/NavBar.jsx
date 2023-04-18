@@ -4,8 +4,8 @@ import "./NavBar.css";
 const NavBar = () =>{
     return(
         <div className="NavBar">
-            <Link to="/home">Home</Link>
-            <Link to="/create">Form</Link>
+            <Link className="link" to="/home">Home</Link>
+            <Link className="link" to="/create">Form</Link>
         </div>
     )
 }

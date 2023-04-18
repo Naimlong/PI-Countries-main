@@ -1,7 +1,28 @@
 .NavBar{
-    display: flex;
+    /* display: flex;
     flex-direction: row;
     justify-content: space-between;
     border-radius: 15px;
-    border: 1px solid black;
+    border: 1px solid black; */
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-top: 200px;
+    color: #636a6b;
+    padding: 0.7em 1.7em;
+    font-size: 15px;
+    border-radius: 0.5em;
+    background: rgb(0,0,0);
+    background: linear-gradient(0deg, rgba(0,0,0,1) 0%, rgba(83,83,83,1) 100%);
+    margin: 20px 5.3% 0px 5.3%;
+    border: 1px solid rgb(60, 63, 68);
+    transition: all 0.3s;
+    box-shadow: 5px -6px 18px -7px #090909;
+    cursor: pointer;
+}
+.link{
+    color: teal;
+    font-family: "Roboto";
+    display: inline;
+
 }

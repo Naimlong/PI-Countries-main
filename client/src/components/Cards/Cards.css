@@ -1,5 +1,6 @@
 .Cards{
     border: 1px solid black;
+    color: aqua;
     display: flex;
     flex-direction: row;
     border-radius: 15px;

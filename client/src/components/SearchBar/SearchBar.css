@@ -1,0 +1,27 @@
+.input{
+  color: black;
+  margin-top: 25px;
+  padding: 4px 18px;
+  background: #636a6b;
+  border: 1px solid black;
+  border-radius: 4px;
+  font-size: 15px;
+  height: 25px;
+  width: 350px;
+  appearance: none;
+  transition: border 0.15s ease 0s;
+  
+} 
+.submit {
+  color: black;
+  padding: 0.7em 1.7em;
+  font-size: 13px;
+  border-radius: 4px;
+  background: #636a6b;
+  border: 1px solid black;
+  transition: all 0.3s;
+  cursor: pointer;
+  width: 100px;
+  margin-bottom: none;
+  height: 35px;
+}

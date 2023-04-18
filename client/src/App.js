@@ -5,24 +5,17 @@ import Detail from "./views/Detail/Detail";
 import Form from "./views/Form/Form";
 import NavBar from './components/NavBar/NavBar';
 
-import { Route } from "react-router-dom"
+import { Route, Switch } from "react-router-dom"
 
 function App() {
   return (
     <div className="App">
-      <Route exact path="/">
-        <Landing/>
-      </Route>
-      <NavBar/>
-      <Route exact path="/detail">
-        <Detail/>
-      </Route>
-      <Route exact path="/create">
-        <Form/>
-      </Route>
-      <Route path="/home">
-        <Home/> 
-      </Route>
+      <Switch>
+        <Route exact path="/" component={Landing}/>
+        <Route exact path="/home" component={Home}/>  
+        <Route exact path="/details/:id" component={Detail}/>
+        <Route exact path="/create" component={Form}/>  
+      </Switch>
     </div>
   );
 }

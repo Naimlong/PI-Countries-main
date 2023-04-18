@@ -1,13 +1,7 @@
 .Card{
-    /* border: 1px solid black;
-    width: fit-content;
-    height: fit-content;
-    border-radius: 10px; */
-    
-
-    background-color: #222635;
-  /* box-shadow: -5px -5px 15px #444, 5px 5px 15px #222, inset 5px 5px 10px #444, inset -5px -5px 10px #222; */
-  /* border:1px solid #1b1f2c; */
+  
+    background: rgb(0,0,0);
+    background: linear-gradient(0deg, rgba(0,0,0,1) 0%, rgba(83,83,83,1) 100%);
     border: 1px solid #2f3549;
     font-family: Arial;
     width: 30%;
@@ -31,4 +25,18 @@ h5 {
 }
 .nameCountry {
     padding: 2px;
+}
+.buttonCard {
+    color: whitesmoke;
+    padding: 5px 15px;
+    font-size: 15px;
+    border-radius: 0.5em;
+    background: rgb(31, 32, 35);
+    border: 1px solid rgb(60, 63, 68);
+    transition: all 0.3s;
+    box-shadow: 5px -6px 18px -7px #090909;
+    cursor: pointer;
+}
+.buttonCard:active {
+    border-color: teal;
   }

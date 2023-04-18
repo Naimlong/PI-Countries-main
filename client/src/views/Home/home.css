@@ -1,0 +1,37 @@
+.home{
+    
+    margin: 0;
+    
+    /* background: rgb(63,50,124);
+    background: linear-gradient(9deg, rgba(63,50,124,1) 0%, rgba(254,95,95,1) 36%, rgba(219,24,255,1) 100%); */
+}
+.select {
+    border: none;
+    font-family: "Roboto";
+    border-radius: 4px;
+    font-size: 17px;
+    font-weight: 600;
+    background-color: rgb(31, 32, 35);
+    border: 1px solid rgb(60, 63, 68);
+    color: teal;
+    cursor: pointer;
+}
+option {
+    cursor: pointer;
+}
+.loader {
+    width: 48px;
+    height: 48px;
+    border: 5px solid rgb(247, 248, 248);
+    border-bottom-color: transparent;
+    border-radius: 50%;
+    display: inline-block;
+    box-sizing: border-box;
+    animation: rotation 1s linear infinite;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+
