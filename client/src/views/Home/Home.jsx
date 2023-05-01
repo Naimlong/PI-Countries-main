@@ -1,5 +1,4 @@
 import Card from "../../components/Card/Card";
-import { Link } from 'react-router-dom';
 import { useEffect, useState, Suspense } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { getCountries, orderCountriesA_Z, getCountriesByContintent, getActivities, byActivities } from "../../redux/actions";
@@ -13,7 +12,7 @@ const Home = () =>{
 
     const dispatch = useDispatch();
     const allCountries = useSelector((state) => state.countries);
-    //const activity = useSelector(state => state.activity)
+    const activity = useSelector(state => state.activities)
 
     const [currentPage, setCurrentPage] = useState(1);
     const [countriesPerPage, setcountriesPerPage] = useState(9);
@@ -29,7 +28,7 @@ const Home = () =>{
 
     useEffect(()=>{
         dispatch(getCountries());
-        //dispatch(byActivities())
+        dispatch(getActivities())
     },[dispatch]);
 
     const handlerClick = (e) =>{
@@ -44,17 +43,24 @@ const Home = () =>{
         setOrder(e.target.value);
     };
 
-    const handlerFilterContinents = (e) => {
-        dispatch(getCountriesByContintent(e.target.value))
-    };
 
-    // const handlerActivities = (e) => {
-    //     dispatch(byActivities(e.target.value))
-    //     setOrder(e.target.value)
-    // }
-    // useEffect(() => {
-    //     dispatch(getActivities())
-    // }, [dispatch])
+    const arr = [
+        "Africa",
+        "South America",
+        "North America",
+        "Asia",
+        "Oceania",
+        "Antarctica",
+        "Europe",
+        "all",
+    ];
+    function handleChange(e) {
+        if (arr.includes(e.target.value)) {
+          dispatch(getCountriesByContintent(e.target.value));
+        } else {
+          dispatch(byActivities(e.target.value));
+        }
+    }
 
     return(
         <div className="home">
@@ -72,7 +78,7 @@ const Home = () =>{
                         <option value="ascd">Ascendente</option>
                         <option value="desc">Descendente</option>
                     </select>
-                    <select className="select" onChange={(e) => handlerFilterContinents(e)}>
+                    <select className="select" onChange={(e) => handleChange(e)}>
                         <option value="all">Selecciona</option>
                         <option value="all">todos</option>
                         <option value="Africa">africa</option>
@@ -83,8 +89,8 @@ const Home = () =>{
                         <option value="Europe">europa</option>
                         <option value="Oceania">oceania</option>
                     </select>
-                    {/* <select onChange={handlerActivities}>
-                        <option value="all">Todas las actividades</option>
+                    <select className="select" onChange={handleChange}>
+                        <option value="allActivities">Todas las actividades</option>
                         {activity.map((el) => {
                             return (
                                 <option key={el.id} value={el.name}>
@@ -92,7 +98,7 @@ const Home = () =>{
                                 </option>
                             );
                             })}
-                    </select> */}
+                    </select>
 
                 </div>
                 <div>    

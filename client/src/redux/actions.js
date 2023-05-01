@@ -48,9 +48,13 @@ export const  orderCountriesA_Z = (payload) => {
 
 export const  getActivities = () => {
     return async function(dispatch){
-        const activitiesUrl = await axios.get("http://localhost:3001/activities");
-        const activities = activitiesUrl.data;
-        dispatch({type: GET_ACTIVITIES, payload:activities})
+        try {
+            const activitiesUrl = await axios.get("http://localhost:3001/activities");
+            const activities = activitiesUrl.data;
+            dispatch({type: GET_ACTIVITIES, payload:activities})
+        } catch (e) {
+            console.log(`Este es el error de getActivities ${e}`);
+        }
     };
 }
 

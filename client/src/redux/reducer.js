@@ -10,7 +10,7 @@ import { GET_COUNTRIES,
 const initialState = {
     countries: [],
     allCountries: [],
-    allActivities: [],
+    activities: [],
     activity: [],
     detail: [],
 };
@@ -70,12 +70,13 @@ const roootReducer = (state = initialState, action) => {
             }
         
         case BY_ACTIVITIES:
-            const allActivities = state.allActivities;
-            const activityFilter = action.payload === 'all' ? allActivities.filter(e => e.activities.length > 0) :
-                allActivities.filter(c => c.activities.find((element) => element.name.toLowerCase() === action.payload))
+            const allActivities = state.activities;
+            const allCountriesActivities = state.allCountries;
+            const activityFilter = action.payload === 'allActivities' ? allCountriesActivities :
+                allActivities.filter((el) => el.name === action.payload)
             return {
                 ...state,
-                countries: activityFilter
+                countries: activityFilter[0].countries || allCountriesActivities,
             }
 
         default:
